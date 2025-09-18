@@ -209,3 +209,4 @@ __marimo__/
 # Project
 models/*.pth
 demo/
+.gradio/
