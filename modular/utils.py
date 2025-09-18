@@ -30,31 +30,3 @@ def save_model(model: torch.nn.Module,
   print(f"[INFO] Saving model to: {model_save_path}")
   torch.save(obj=model.state_dict(),
              f=model_save_path)
-
-def load_model(model: torch.nn.Module,
-               target_dir: str,
-               model_name: str,
-               device: str = 'cpu') -> torch.nn.Module:
-    """
-    Loads a PyTorch model's state_dict from a target directory.
-
-    Args:
-        model: The initialized model architecture to load weights into.
-        target_dir: Directory containing the saved model.
-        model_name: Filename of the saved model (must end with .pt or .pth).
-        device: Device to map the model to ('cpu' or 'cuda').
-
-    Returns:
-        The model with loaded weights.
-    """
-    target_dir_path = Path(target_dir)
-    model_save_path = target_dir_path / model_name
-
-    assert model_save_path.exists(), f"No model found at {model_save_path}"
-
-    # Load state_dict
-    print(f"[INFO] Loading model from: {model_save_path}")
-    model.load_state_dict(torch.load(model_save_path, map_location=device))
-    model.to(device)
-    model.eval()  # set eval mode
-    return model
