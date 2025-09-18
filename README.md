@@ -80,11 +80,15 @@ cd vietnamese-landmark-classifier
 ```bash
 pip install -r demo/requirements.txt
 ```
+### 3. Run train.py to train and save model locally
+```bash
+python training/train.py
+```
 
-### 3. Run the Demo Application
+### 4. Run the Demo Application
 ```bash
 python demo/app.py
 ```
 
-### 4. Try Online Demo
+### 5. Try Online Demo
 Visit our [Hugging Face Space](https://huggingface.co/spaces/HuynhNhat0403/VietnameseLandmarkClassification) for instant testing!
