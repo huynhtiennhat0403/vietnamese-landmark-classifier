@@ -210,3 +210,4 @@ __marimo__/
 models/*.pth
 demo/
 notebooks/.gradio/
+reports/
